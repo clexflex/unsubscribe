@@ -60,4 +60,4 @@ def export_unsubscribed_emails():
         return "Error exporting unsubscribed emails.", 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
