@@ -3,6 +3,7 @@ import boto3
 import sqlite3
 import logging
 import csv
+import os
 from datetime import datetime
 
 app = Flask(__name__)
