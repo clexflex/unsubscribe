@@ -3,7 +3,6 @@ import boto3
 import sqlite3
 import logging
 import csv
-import os
 from datetime import datetime
 
 app = Flask(__name__)
@@ -37,7 +36,7 @@ def unsubscribe():
     email = request.args.get('email')
     if email:
         unsubscribe_user(email)
-        1(email)
+        store_unsubscribed_email(email)
         return "You have been unsubscribed successfully."
     return "Invalid request.", 400
 
@@ -61,4 +60,4 @@ def export_unsubscribed_emails():
         return "Error exporting unsubscribed emails.", 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(debug=True)
